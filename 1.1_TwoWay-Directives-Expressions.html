@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+  <head>
+      <title>Super Awesome Angular Playlist</title>
+      <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
+      <!-- Angular script goes in the head due to how it manipulates the DOM -->
+      <script src="app/lib/angular.min.js"></script>
+  </head>
+  <body ng-init="meats=['pork', 'ham', 'beef']"> <!-- ng-init, normally would use a controller for this purpose -->
+    <!-- Two-way Data Binding -->
+    <!-- Directives https://docs.angularjs.org/api/ng/directive - ie ng-app, ng-model, etc - extends HTML functionality-->
+    <input type="text" ng-model="favMeat" placeholder="enter your fav meat"/>
+    <!-- Expressions - {{}} - small snippites of JS code in the html, Angular evaluates it and throws the output
+            can output more complex data as well (i.e. concatenation, math, etc) -->
+    <p>You like: {{meats[1]}}, and you also like {{meats [2]}}</p>
+
+
+  </body>
+</html>

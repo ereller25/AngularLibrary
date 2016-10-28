@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myNinjaApp">
+  <head>
+      <title>Super Awesome Angular Playlist</title>
+      <link href="content/styles.css" rel="stylesheet" type="text/css" />
+      <script src="app/lib/angular.min.js"></script>
+      <script src="app/app.js"></script>
+  </head>
+  <body>
+    <header ng-include="'header.html'"></header>
+    <div class="content">
+
+      <div ng-controller="NinjaController">
+        <input type="text" ng-model="search" />
+        <ul>
+          <!-- ng-show - will display the element based on true or false -->
+          <!-- ng-hide - will hide anything that is true -->
+          <li ng-repeat="ninja in ninjas | orderBy:'name' | filter: search" ng-show="ninja.available">
+        {{ninja.name}} - {{ninja.rate | currency}}</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

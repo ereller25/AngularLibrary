@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myNinjaApp">
+  <head>
+      <title>Super Awesome Angular Playlist</title>
+      <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
+      <script src="app/lib/angular.min.js"></script>
+      <script src="app/appcontroller.js"></script>
+  </head>
+  <body>
+    <div ng-controller="NinjaController">
+    <ul>
+      <!-- Controller is passing the data in the app.js array of ninjas and ng-repeat displays them -->
+      <li ng-repeat="ninja in ninjas">{{ninja}}</li>
+    </ul>
+    </div>
+
+  </body>
+</html>

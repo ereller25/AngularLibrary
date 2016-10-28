@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myNinjaApp">
+  <head>
+      <title>Super Awesome Angular Playlist</title>
+      <link href="content/styles.css" rel="stylesheet" type="text/css" />
+      <script src="app/lib/angular.min.js"></script>
+      <script src="app/app.js"></script>
+  </head>
+  <body>
+    <header ng-include="'header.html'"></header>
+    <div class="content">
+      <div ng-controller="NinjaController">
+        <!-- ng-click - tie a button to a function, in this case ordering by some element, this is a simple example -->
+        <button ng-click="order = 'name'">Order by Name</button>
+        <button ng-click="order = 'belt'">Order by Belt</button>
+        <input type="text" ng-model="search" placeholder="Search for a ninja"/>
+        <ul>
+          <!--Change orderBy to a variable (order) to take input from the ng-clicks above -->
+          <li ng-repeat="ninja in ninjas | orderBy: order | filter: search" ng-show="ninja.available">
+              <h3>{{ninja.name}} - {{ninja.rate | currency}}</h3>
+              <!-- Below references a functions to remove a ninja in the app.js -->
+              <div class="remove" ng-click="removeNinja(ninja)">X</div>
+              <span class="belt"style="background: {{ninja.belt}}">{{ninja.belt}} belt</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+AngularJS
+Primarily used on single view applications
+
+
+MVC - Model View Controller
+
+Model
+  - Data
+  - JSON, database entries, etc.
+
+View
+  - Displays content & data to a use in a browser
+  - HTML
+  - Uses expressions to insert data
+    - <html tag> {{data}} <html tag>
+
+Controller
+  - Functionality of our views
+  - Interaction between models and views
+  - Different controllers for different area of app, what makes it all work
+
+Example
+  - User clicks 'show users' button
+  - A 'UserController' starts a function on a  button click
+  - Function communicates with the 'users' model and pulls all the user data
+  - The controllers passes the data to the view and shows it via and expression
+
+  Sometimes called MVW - Model View Whatever
+
+
+File Structure for this Library
+  - HTML files with an app.js are called by matching files
+    - This is for specific demos, normally would have an app.js and individual controllers

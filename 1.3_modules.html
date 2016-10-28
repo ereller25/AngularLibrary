@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myNinjaApp"> <!-- ng-app must equal wgat us being called in app.js in the angular.module -->
+  <head>
+      <title>Super Awesome Angular Playlist</title>
+      <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
+      <script src="app/lib/angular.min.js"></script>
+      <script src="app/appstructure.js"></script> <!--Links to the file controlling the app, SEE appdemo.js for basics -->
+  </head>
+  <body ng-init="ninjas=['yoshi', 'crystal', 'ryu', 'subzero']">
+
+    <input type="text" ng-model="favMeat" placeholder="enter your fav meat"/>
+    <ul>
+      <li ng-repeat="ninja in ninjas">{{ninja}}</li>
+    </ul>
+
+  </body>
+</html>
